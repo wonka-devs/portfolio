@@ -606,12 +606,21 @@ section { position: relative; }
 .project-card::before {
   content: '';
   position: absolute;
-  top: -50%; left: -50%;
-  width: 200%; height: 200%;
-  background: conic-gradient(from 180deg, transparent 60%, rgba(79,84,255,0.06) 70%, transparent 80%);
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 180deg,
+    transparent 60%,
+    rgba(79,84,255,0.06) 70%,
+    transparent 80%
+  );
   opacity: 0;
   transition: opacity 0.5s;
   animation: rotate-gradient 8s linear infinite;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .project-card:hover {
@@ -620,7 +629,14 @@ section { position: relative; }
   box-shadow: 0 20px 50px rgba(79, 84, 255, 0.15);
 }
 
-.project-card:hover::before { opacity: 1; }
+.project-card:hover::before {
+  opacity: 1;
+}
+
+.project-card > * {
+  position: relative;
+  z-index: 1;
+}
 
 .project-number {
   font-family: 'Syne', sans-serif;
@@ -667,17 +683,26 @@ section { position: relative; }
   border-radius: 6px;
 }
 
-.project-links { display: flex; gap: 16px; }
+.project-links {
+  display: flex;
+  gap: 16px;
+  position: relative;
+  z-index: 2;
+}
 
 .project-link {
   font-size: 13px;
   font-weight: 600;
+  position: relative;
   color: var(--muted);
   text-decoration: none;
   transition: all 0.2s;
   display: inline-flex;
   align-items: center;
   gap: 4px;
+  z-index: 3;
+  pointer-events: auto;
+}
 }
 
 .project-link:hover {
