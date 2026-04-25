@@ -285,7 +285,7 @@ nav.scrolled {
 }
 
 .hero-title {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: clamp(52px, 7vw, 88px);
   font-weight: 800;
   line-height: 1.0;
@@ -460,7 +460,7 @@ section { position: relative; }
 .stat:hover::before { opacity: 1; }
 
 .stat-num {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 34px;
   font-weight: 800;
   color: var(--text);
