@@ -32,10 +32,10 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'Inter', sans-serif;
-  font-size: 15px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
   line-height: 1.7;
-  overflow-x: hidden;
+  font-weight: 400;
 }
 
 /* ── BACKGROUND NOISE + MESH ── */
@@ -93,6 +93,17 @@ nav.scrolled {
   text-decoration: none;
   letter-spacing: -0.5px;
   position: relative;
+}
+
+h1, h2, h3 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+p {
+  font-weight: 400;
+  color: var(--muted);
 }
 
 .nav-logo span { color: var(--accent); }
@@ -285,11 +296,11 @@ nav.scrolled {
 }
 
 .hero-title {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Syne', sans-serif;
   font-size: clamp(52px, 7vw, 88px);
   font-weight: 800;
   line-height: 1.0;
-  letter-spacing: -3px;
+  letter-spacing: -2px;
   color: var(--text);
   margin-bottom: 24px;
   animation: fadeUp 0.6s ease 0.1s both;
@@ -329,7 +340,7 @@ nav.scrolled {
   border-radius: 10px;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.04em;
   text-decoration: none;
   transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
