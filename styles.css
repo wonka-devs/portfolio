@@ -599,6 +599,7 @@ section { position: relative; }
   transition: all 0.35s ease;
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
 /* Animated gradient background on hover */
@@ -682,11 +683,22 @@ section { position: relative; }
   display: inline-flex;
   align-items: center;
   gap: 4px;
+  position: relative;
+  z-index: 4;
+  pointer-events: auto;
 }
 
 .project-link:hover {
   color: var(--accent);
   transform: translateX(2px);
+}
+
+.project-card::before,
+.project-card::after,
+.glow,
+.photo-wrapper::before,
+.photo-wrapper::after {
+  pointer-events: none;
 }
 
 /* ── EXPERIENCE ── */
