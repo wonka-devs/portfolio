@@ -604,16 +604,28 @@ section { position: relative; }
 
 /* Animated gradient background on hover */
 .project-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
   content: '';
   position: absolute;
-  top: -1%; left: -1%;
-  width: 1%; height: 1%;
-  background: conic-gradient(from 180deg, transparent 60%, rgba(79,84,255,0.06) 70%, transparent 80%);
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 180deg,
+    transparent 60%,
+    rgba(79,84,255,0.06) 70%,
+    transparent 80%
+  );
   opacity: 0;
   transition: opacity 0.5s;
   animation: rotate-gradient 8s linear infinite;
-}
-
+  pointer-events: none;
+  z-index: 0;
 }
 
 .project-card:hover {
@@ -622,7 +634,14 @@ section { position: relative; }
   box-shadow: 0 20px 50px rgba(79, 84, 255, 0.15);
 }
 
-.project-card:hover::before { opacity: 1; }
+.project-card:hover::before {
+  opacity: 1;
+}
+
+.project-card > * {
+  position: relative;
+  z-index: 1;
+}
 
 .project-number {
   font-family: 'Syne', sans-serif;
@@ -669,7 +688,10 @@ section { position: relative; }
   border-radius: 6px;
 }
 
-.project-links { display: flex; gap: 16px; }
+.project-links {
+  display: flex;
+  gap: 16px;
+}
 
 .project-link {
   font-size: 13px;
@@ -911,6 +933,24 @@ footer {
     opacity: 0;
     transform: translateY(-10vh) scale(1.5);
   }
+}
+
+/* ── REVEAL ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Stagger delays for children */
