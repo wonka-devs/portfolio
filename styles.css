@@ -409,7 +409,7 @@ section { position: relative; }
 }
 
 .section-title {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: clamp(28px, 3.5vw, 48px);
   font-weight: 800;
   color: var(--text);
@@ -648,7 +648,7 @@ section { position: relative; }
 }
 
 .project-title {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 20px;
   font-weight: 800;
   color: var(--text);
