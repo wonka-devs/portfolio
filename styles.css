@@ -95,11 +95,6 @@ nav.scrolled {
   position: relative;
 }
 
-p {
-  font-weight: 400;
-  color: var(--muted);
-}
-
 .nav-logo span { color: var(--accent); }
 
 .nav-logo::after {
